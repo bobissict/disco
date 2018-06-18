@@ -5,6 +5,7 @@ import Sound from 'react-sound';
 import Hero from './components/Hero';
 import Lowdown from './components/Lowdown';
 import RSVP from './components/RSVP';
+import Thanks from './components/Thanks';
 
 import { sendMessage } from './api'
 
@@ -19,6 +20,7 @@ const Wrapper = styled('div')`
   align-items: center;
   flex-direction: column;
   color: white;
+  position: relative;
 `;
 
 const Title = styled('h1')`
@@ -30,6 +32,7 @@ const Title = styled('h1')`
 class App extends Component {
   state = {
     value: '',
+    sent: false,
   }
 
   handleChange = (event) => {
@@ -37,11 +40,11 @@ class App extends Component {
   }
 
   handleSubmit = () => {
+    this.setState({ sent: true });
     const payload = {
       text: this.state.value,
     }
     sendMessage(payload)
-    console.log(this.state.value);
   }
 
   render() {
@@ -54,6 +57,7 @@ class App extends Component {
           playStatus={Sound.status.PLAYING}
         /> */}
         <RSVP value={this.state.value} onChange={this.handleChange} onSubmit={this.handleSubmit}/>
+        {this.state.sent && <Thanks />}
       </Wrapper>
     );
   }
