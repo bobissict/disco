@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -36,18 +37,20 @@ const Button = styled.button`
   font-weight: bold;
 `
 
-const RSVP = () => (
+const RSVP = ({ value, onChange, onSubmit }) => (
   <Wrapper>
     <h1>RSVP</h1>
-    <p>If you can make it drop your detz below so we know how much snacks <i>*cough*</i> tequila to buy 🍺👍🏻</p>
+    <p>If you can make it to this glamourous event, drop your name below so we know how much snacks <i>*cough*</i> tequila to buy 🍺👍🏻</p>
     <br />
     <h3>Name</h3>
-    <Input type="text" placeholder="your name here" />
-    <h3>Extra guests</h3>
-    <Input type="number" placeholder="number extra guests here" />
+    <Input value={value} onChange={onChange} type="text" placeholder="your name here" />
     <br />
-    <Button>submit</Button>
+    <Button onClick={() => onSubmit()}>submit</Button>
   </Wrapper>
 )
+
+RSVP.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+}
 
 export default RSVP;

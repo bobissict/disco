@@ -6,6 +6,8 @@ import Hero from './components/Hero';
 import Lowdown from './components/Lowdown';
 import RSVP from './components/RSVP';
 
+import { sendMessage } from './api'
+
 import backgroundImage from './blue_texture.jpg'
 
 const Wrapper = styled('div')`
@@ -26,6 +28,22 @@ const Title = styled('h1')`
 `
 
 class App extends Component {
+  state = {
+    value: '',
+  }
+
+  handleChange = (event) => {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit = () => {
+    const payload = {
+      text: this.state.value,
+    }
+    sendMessage(payload)
+    console.log(this.state.value);
+  }
+
   render() {
     return (
       <Wrapper>
@@ -35,7 +53,7 @@ class App extends Component {
           url="https://s3-eu-west-1.amazonaws.com/bo-personal/BoogieWonderland.mp3"
           playStatus={Sound.status.PLAYING}
         /> */}
-        <RSVP />
+        <RSVP value={this.state.value} onChange={this.handleChange} onSubmit={this.handleSubmit}/>
       </Wrapper>
     );
   }
