@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  padding: 0px 30px 90px;
+  padding: 0px 30px 220px;
   p {
     font-size: 20px;
     line-height: 26px;
