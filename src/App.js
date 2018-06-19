@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Sound from 'react-sound';
+// import Sound from 'react-sound';
 
 import Hero from './components/Hero';
 import Lowdown from './components/Lowdown';
@@ -22,12 +22,6 @@ const Wrapper = styled('div')`
   color: white;
   position: relative;
 `;
-
-const Title = styled('h1')`
-  font-weight: 700;
-  font-size: 55px;
-  text-align: center;
-`
 
 class App extends Component {
   state = {

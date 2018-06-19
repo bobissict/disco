@@ -26,6 +26,7 @@ const Title = styled.h1`
   text-align: center;
 `;
 
+
 const Thanks = () => (
   <Wrapper>
     <Title>See you at the disco<br />👶🏻🐻💃</Title>
@@ -37,6 +38,7 @@ const Thanks = () => (
       <span className="title">Chantals super suprise disco party</span>
       <span className="description">Chantals 30th Birthday @ House of H</span>
       <span className="location">112 Loop Street, Cape Town, 8001</span>
+      <span className="client">aEvwiDUrBzouWkgBemhF47172</span>
     </div>
   </Wrapper>
 )
