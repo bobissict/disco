@@ -30,16 +30,6 @@ const Title = styled.h1`
 const Thanks = () => (
   <Wrapper>
     <Title>See you at the disco<br />👶🏻🐻💃</Title>
-    <div title="Add to Calendar" className="addeventatc">
-      Add to Calendar
-      <span className="start">06/07/2018 07:00 PM</span>
-      <span className="end">06/07/2018 11:59 PM</span>
-      <span className="timezone">Africa/Johannesburg</span>
-      <span className="title">Chantals super suprise disco party</span>
-      <span className="description">Chantals 30th Birthday @ House of H</span>
-      <span className="location">112 Loop Street, Cape Town, 8001</span>
-      <span className="client">aEvwiDUrBzouWkgBemhF47172</span>
-    </div>
   </Wrapper>
 )
 
